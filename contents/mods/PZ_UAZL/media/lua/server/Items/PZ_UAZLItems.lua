@@ -691,6 +691,27 @@ local function getMechanicItems(rarity)
     return items
 end
 
+-- Лут строителя
+local function getConstructionWorkerItems(rarity)
+    rarity = rarity or 3;
+    local items = {
+        {"Base.Scotchtape", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Tarp", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.DuctTape", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.DuctTape", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.UnusableWood", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.UnusableWood", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.UnusableWood", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Dirtbag", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.PlasterPowder", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.ConcretePowder", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Nails", tonumber(string.format("%.4f", rarity * 0.7))},
+        {"Base.Nails", tonumber(string.format("%.4f", rarity * 0.7))},
+        {"Base.NailsBox", tonumber(string.format("%.4f", rarity * 0.7))},
+    }
+    return items
+end
+
 -- Оружие - Ближнее
 local function getMeleeWeaponsAxesItems(rarity) --Топоры
     rarity = rarity or 3;
@@ -1079,6 +1100,9 @@ return {
 
     -- Лут механика
     getMechanicItems = getMechanicItems,
+
+    -- Лут строителя
+    getConstructionWorkerItems = getConstructionWorkerItems,
 
     -- Тестовые предметы
     getKeysItems = getKeysItems,

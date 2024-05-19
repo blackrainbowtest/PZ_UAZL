@@ -52,13 +52,13 @@ local function addSandboxLoot()
                 UAZLItems.getCleaningItems(LootRarity.Elite),
                 UAZLItems.getCommunicationsBaseItems(LootRarity.Elite),
                 UAZLItems.getTourismItems(LootRarity.Elite),
-                UAZLItems.getMoneyItems(LootRarity.Uncommon),
+                UAZLItems.getMoneyItems(LootRarity.Rare),
 
-                UAZLItems.getMeleeWeaponsAxesItems(LootRarity.VeryRare),
-                UAZLItems.getMeleeWeaponsLongBluntsItems(LootRarity.VeryRare),
-                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.VeryRare),
-                UAZLItems.getMeleeWeaponsLongBladesItems(LootRarity.VeryRare),
-                UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.VeryRare)
+                UAZLItems.getMeleeWeaponsAxesItems(LootRarity.Elite),
+                UAZLItems.getMeleeWeaponsLongBluntsItems(LootRarity.Elite),
+                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Elite),
+                UAZLItems.getMeleeWeaponsLongBladesItems(LootRarity.Elite),
+                UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Elite)
 
                 )
             },
@@ -75,11 +75,11 @@ local function addSandboxLoot()
                     UAZLItems.getCommunicationsBaseItems(LootRarity.Elite),
                     UAZLItems.getTourismItems(LootRarity.Elite),
     
-                    UAZLItems.getMeleeWeaponsAxesItems(LootRarity.VeryRare),
-                    UAZLItems.getMeleeWeaponsLongBluntsItems(LootRarity.VeryRare),
-                    UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.VeryRare),
-                    UAZLItems.getMeleeWeaponsLongBladesItems(LootRarity.VeryRare),
-                    UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.VeryRare)
+                    UAZLItems.getMeleeWeaponsAxesItems(LootRarity.Elite),
+                    UAZLItems.getMeleeWeaponsLongBluntsItems(LootRarity.Elite),
+                    UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Elite),
+                    UAZLItems.getMeleeWeaponsLongBladesItems(LootRarity.Elite),
+                    UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Elite)
     
                     )
             },
@@ -134,7 +134,7 @@ local function addSandboxLoot()
             },
             -- Строитель
             Outfit_ConstructionWorker = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Rare),
+                items = mergeTables(UAZLItems.getConstructionWorkerItems(LootRarity.Common),
                     UAZLItems.getCarpentrySkillBooksItems(LootRarity.Rare),
                     UAZLItems.getCarpentrySkillBooksItems(LootRarity.Uncommon))
             },
