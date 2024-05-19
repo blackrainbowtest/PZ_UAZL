@@ -256,6 +256,17 @@ local function getFirstAidSkillBooksItems(rarity)
     }
     return items
 end
+local function getBookFishingSkillBooksItems(rarity)
+    rarity = rarity or 3;
+    local items = {
+        {"Base.BookFishing1", tonumber(string.format("%.4f", rarity))},
+        {"Base.BookFishing2", tonumber(string.format("%.4f", rarity * 0.85))},
+        {"Base.BookFishing3", tonumber(string.format("%.4f", rarity * 0.75))},
+        {"Base.BookFishing4", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.BookFishing5", tonumber(string.format("%.4f", rarity * 0.67))},
+    }
+    return items
+end
 local function getForagingSkillBooksItems(rarity)
     rarity = rarity or 3;
     local items = {
@@ -817,6 +828,160 @@ local function getMeleeWeaponsShortBladesItems(rarity) --Короткое реж
     return items
 end
 
+-- Оружие стрелковое
+local function getShotgunItems(rarity) --Дробовики
+    rarity = rarity or 3;
+    local items = {
+        {"Base.DoubleBarrelShotgun", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.DoubleBarrelShotgunSawnoff", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Shotgun", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Shotgun", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.ShotgunShells", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.ShotgunShellsBox", tonumber(string.format("%.4f", rarity * 0.75))}
+    }
+    return items
+end
+local function getHandguns44MagnumPistolItems(rarity) --44 магнум пистолет
+    rarity = rarity or 3;
+    local items = {
+        {"Base.Pistol3", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Bullets44", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.44Clip", tonumber(string.format("%.4f", rarity * 0.8))},
+        {"Base.Laser", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.Bullets44Box", tonumber(string.format("%.4f", rarity * 0.50))}
+    }
+    return items
+end
+local function getHandguns44MagnumRevolverItems(rarity) --44 магнум револьвер
+    rarity = rarity or 3;
+    local items = {
+        {"Base.Revolver_Long", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Bullets44", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.Bullets44Box", tonumber(string.format("%.4f", rarity * 0.50))}
+    }
+    return items
+end
+local function getHandguns45AutoPistolItems(rarity) --45 авто пистолет
+    rarity = rarity or 3;
+    local items = {
+        {"Base.Pistol2", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Bullets45", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.45Clip", tonumber(string.format("%.4f", rarity * 0.8))},
+        {"Base.Laser", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.Bullets44Box", tonumber(string.format("%.4f", rarity * 0.20))}
+    }
+    return items
+end
+local function getHandguns38SpecialRevolverItems(rarity) --38 спешл револьвер
+    rarity = rarity or 3;
+    local items = {
+        {"Base.Revolver_Short", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Bullets38", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.Bullets38Box", tonumber(string.format("%.4f", rarity * 0.20))},
+    }
+    return items
+end
+local function getHandguns45AutoRevolverItems(rarity) --45 авто револьвер
+    rarity = rarity or 3;
+    local items = {
+        {"Base.Revolver_Short", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Bullets45", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.Bullets44Box", tonumber(string.format("%.4f", rarity * 0.20))}
+    }
+    return items
+end
+local function getHandguns9mmPistolItems(rarity) --9мм пистолет
+    rarity = rarity or 3;
+    local items = {
+        {"Base.Pistol", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.Bullets9mm", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.9mmClip", tonumber(string.format("%.4f", rarity * 0.8))},
+        {"Base.Laser", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.Bullets9mmBox", tonumber(string.format("%.4f", rarity * 0.50))}
+    }
+    return items
+end
+local function getHandguns308RifleM14Items(rarity) --308 винтовка М14
+    rarity = rarity or 3;
+    local items = {
+        {"Base.AssaultRifle2", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.308Bullets", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.M14Clip", tonumber(string.format("%.4f", rarity * 0.8))},
+        {"Base.x2Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x4Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x8Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Laser", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RecoilPad", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.308Box", tonumber(string.format("%.4f", rarity * 0.50))}
+    }
+    return items
+end
+local function getHandguns556RifleM16Items(rarity) --5.56 винтовка М16
+    rarity = rarity or 3;
+    local items = {
+        {"Base.AssaultRifle", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.556Bullets", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.556Clip", tonumber(string.format("%.4f", rarity * 0.8))},
+        {"Base.x2Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x4Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x8Scope", tonumber(string.format("%.4f", rarity * 0.70))},   
+        {"Base.Laser", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RecoilPad", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.556Box", tonumber(string.format("%.4f", rarity * 0.50))}
+    }
+    return items
+end
+local function getHandguns223RifleMSR700Items(rarity) --223 винтовка МSR700
+    rarity = rarity or 3;
+    local items = {
+        {"Base.VarmintRifle", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.223Bullets", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.223Clip", tonumber(string.format("%.4f", rarity * 0.8))},
+        {"Base.x2Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x4Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x8Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.FiberglassStock", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RecoilPad", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.223Box", tonumber(string.format("%.4f", rarity * 0.50))}
+    }
+    return items
+end
+local function getHandguns308RifleMSR788Items(rarity) --308 винтовка МSR788
+    rarity = rarity or 3;
+    local items = {
+        {"Base.HuntingRifle", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.308Bullets", tonumber(string.format("%.4f", rarity * 1))},
+        {"Base.308Clip", tonumber(string.format("%.4f", rarity * 0.8))},
+        {"Base.x2Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x4Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.x8Scope", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.FiberglassStock", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RecoilPad", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
+        {"Base.308Box", tonumber(string.format("%.4f", rarity * 0.50))}
+    }
+    return items
+end
+
 return {
     -- Медецина
     getBandagesItems = getBandagesItems,
@@ -852,6 +1017,7 @@ return {
     getElectricianSkillBooksItems = getElectricianSkillBooksItems,
     getFarmingSkillBooksItems = getFarmingSkillBooksItems,
     getFirstAidSkillBooksItems = getFirstAidSkillBooksItems,
+    getBookFishingSkillBooksItems = getBookFishingSkillBooksItems,
     getForagingSkillBooksItems = getForagingSkillBooksItems,
     getMechanicSkillBooksItems = getMechanicSkillBooksItems,
     getMetalWeldingSkillBooksItems = getMetalWeldingSkillBooksItems,
@@ -880,6 +1046,24 @@ return {
     getMeleeWeaponsShortBluntsItems = getMeleeWeaponsShortBluntsItems,
     getMeleeWeaponsLongBladesItems = getMeleeWeaponsLongBladesItems,
     getMeleeWeaponsShortBladesItems = getMeleeWeaponsShortBladesItems,
+
+    -- Оружие стрелковое пистолеты
+    getHandguns44MagnumPistolItems = getHandguns44MagnumPistolItems,
+    getHandguns44MagnumRevolverItems = getHandguns44MagnumRevolverItems,
+    getHandguns45AutoPistolItems = getHandguns45AutoPistolItems,
+    getHandguns38SpecialRevolverItems = getHandguns38SpecialRevolverItems,
+    getHandguns45AutoRevolverItems = getHandguns45AutoRevolverItems,
+    getHandguns9mmPistolItems = getHandguns9mmPistolItems,
+
+    -- Дробовики
+    getShotgunItems = getShotgunItems,
+
+    -- Винтовки
+    getHandguns308RifleM14Items = getHandguns308RifleM14Items,
+    getHandguns556RifleM16Items = getHandguns556RifleM16Items,
+    getHandguns223RifleMSR700Items = getHandguns223RifleMSR700Items,
+    getHandguns308RifleMSR788Items = getHandguns308RifleMSR788Items,
+
 
     -- Деньги
     getMoneyItems = getMoneyItems,
