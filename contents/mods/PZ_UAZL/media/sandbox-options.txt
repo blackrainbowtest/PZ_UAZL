@@ -1,0 +1,19 @@
+VERSION = 1,
+
+option UAZL.BagLoot
+{
+	type = boolean,
+	default = true,
+
+	page = UAZL,
+	translation = UAZL_BagLootGeneral,
+}
+
+option UAZL.Loot
+{
+	type = enum,
+	default = 2,
+	numValues = 5,
+	page = UAZL,
+	translation = UAZL_LootGeneral,
+}

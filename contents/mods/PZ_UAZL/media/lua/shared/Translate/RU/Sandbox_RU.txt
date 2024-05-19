@@ -1,0 +1,14 @@
+Sandbox_RU = {
+    Sandbox_UAZL = "НАСТРОЙКИ UA ZOBIE LOOT",
+
+    Sandbox_UAZL_LootGeneral = "НАСТРОЙКИ ЛУТА ЗОМБИ: ",
+    Sandbox_UAZL_LootGeneral_tooltip = "Устанавливает количество лута в зависимость от настроек",
+    Sandbox_UAZL_LootGeneral_option1 = "Низкий",
+    Sandbox_UAZL_LootGeneral_option2 = "Средний",
+    Sandbox_UAZL_LootGeneral_option3 = "Высокий",
+    Sandbox_UAZL_LootGeneral_option4 = "Очень высокий",
+    Sandbox_UAZL_LootGeneral_option5 = "Невменяемый",
+
+    Sandbox_UAZL_BagLootGeneral = "НАСТРОЙКИ ЛУТА РЮКЗАКОВ: ",
+    Sandbox_UAZL_BagLootGeneral_tooltip = "Если выбрано, генерирует лут в сумках/рюкзаках согласно настройкам лута",
+}
