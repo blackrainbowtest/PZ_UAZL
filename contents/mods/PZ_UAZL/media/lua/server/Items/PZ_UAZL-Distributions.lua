@@ -2,6 +2,7 @@ require 'Items/SuburbsDistributions'
 require "Items/ProceduralDistributions"
 require "Vehicles/VehicleDistributions"
 local UAZLItems = require "Items/PZ_UAZLItems"
+local UAZL_SWL = require "Items/PZ_UAZLSpecialWorkerLoot"
 
 -- Переобразует таблицы в одну большую
 function mergeTables(...)
@@ -20,18 +21,42 @@ function mergeTables(...)
 
     return mergedTable -- Возвращаем объединенную таблицу
 end
+function isSHALCOeveryMinutes()
+    local function mergeTables2(...)
+        local mergedTable = {} -- Создаем новую пустую таблицу для объединенных данных
+    
+        -- Проходим по всем аргументам функции (каждый из которых должен быть таблицей!!!)
+        for _, tbl in ipairs({...}) do
+            -- Проходим по каждому элементу в текущей таблице
+            for _, childTbl in ipairs(tbl) do
+                for _, value in ipairs(childTbl) do
+                    -- Добавляем значение в объединенную таблицу
+                    print(value)
+                end
+            end
+        end
+    
+        return mergedTable -- Возвращаем объединенную таблицу
+    end
+    -- debuging
+    mergeTables2(UAZLItems.getPharmaceuticalsItems(25));
+    mergeTables2(UAZL_SWL.getMechanicItems(25));
+end
+
+Events.EveryOneMinute.Add(isSHALCOeveryMinutes);
 
 local function addSandboxLoot()
+    -- Значение лута по умолчанию
+    local defaultLoot = 2;
     -- Обект редкости лута
     LootRarity = {
-        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 8,
-        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 5,
+        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 5,
+        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 4,
         Rare = (SandboxVars.UAZL.Loot or defaultLoot) * 3,
         VeryRare = (SandboxVars.UAZL.Loot or defaultLoot) * 1,
         ExtraRare = (SandboxVars.UAZL.Loot or defaultLoot) * 0.5,
         Elite = (SandboxVars.UAZL.Loot or defaultLoot) * 0.01,
     }
-    local defaultLoot = 3;
 
     local suburbsDistribution = {
         -- Общее
@@ -42,46 +67,19 @@ local function addSandboxLoot()
             },
             -- Инвентарь зомби женщины
             inventoryfemale = {
-                items = mergeTables(UAZLItems.getBandagesItems(LootRarity.Elite),
-                UAZLItems.getDisinfectantsItems(LootRarity.Elite),
-                UAZLItems.getFirstAidSkillBooksItems(LootRarity.Elite),
-                UAZLItems.getHerbsItems(LootRarity.Elite),
-                UAZLItems.getMedicalEquipmentItems(LootRarity.Elite),
-                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Elite),
-                UAZLItems.getPharmaceuticalsItems(LootRarity.Elite),
-                UAZLItems.getCleaningItems(LootRarity.Elite),
-                UAZLItems.getCommunicationsBaseItems(LootRarity.Elite),
-                UAZLItems.getTourismItems(LootRarity.Elite),
-                UAZLItems.getMoneyItems(LootRarity.Rare),
-
-                UAZLItems.getMeleeWeaponsAxesItems(LootRarity.Elite),
-                UAZLItems.getMeleeWeaponsLongBluntsItems(LootRarity.Elite),
-                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Elite),
-                UAZLItems.getMeleeWeaponsLongBladesItems(LootRarity.Elite),
-                UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Elite)
-
+                items = mergeTables(
+                    UAZLItems.getPharmaceuticalsItems(LootRarity.Common),
+                    UAZLItems.getPharmaceuticalsItems(LootRarity.Common),
+                    UAZLItems.getPharmaceuticalsItems(LootRarity.Common)
                 )
             },
             -- Инвентарь зомби мужчины
             inventorymale = {
-                items = mergeTables(UAZLItems.getBandagesItems(LootRarity.Elite),
-                    UAZLItems.getDisinfectantsItems(LootRarity.Elite),
-                    UAZLItems.getFirstAidSkillBooksItems(LootRarity.Elite),
-                    UAZLItems.getHerbsItems(LootRarity.Elite),
-                    UAZLItems.getMedicalEquipmentItems(LootRarity.Elite),
-                    UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Elite),
-                    UAZLItems.getPharmaceuticalsItems(LootRarity.Elite),
-                    UAZLItems.getCleaningItems(LootRarity.Elite),
-                    UAZLItems.getCommunicationsBaseItems(LootRarity.Elite),
-                    UAZLItems.getTourismItems(LootRarity.Elite),
-    
-                    UAZLItems.getMeleeWeaponsAxesItems(LootRarity.Elite),
-                    UAZLItems.getMeleeWeaponsLongBluntsItems(LootRarity.Elite),
-                    UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Elite),
-                    UAZLItems.getMeleeWeaponsLongBladesItems(LootRarity.Elite),
-                    UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Elite)
-    
-                    )
+                items = mergeTables(
+                    UAZL_SWL.getMechanicItems(LootRarity.Common),
+                    UAZL_SWL.getMechanicItems(LootRarity.Common),
+                    UAZL_SWL.getMechanicItems(LootRarity.Common)
+                )
             },
             -- =====================
             -- OUTFITS / НАРЯДЫ
@@ -89,106 +87,96 @@ local function addSandboxLoot()
 
             -- водителя скорой помощи
             Outfit_AmbulanceDriver = {
-                items = mergeTables(UAZLItems.getBandagesItems(LootRarity.Rare),
-                    UAZLItems.getDisinfectantsItems(LootRarity.Rare),
-                    UAZLItems.getFirstAidSkillBooksItems(LootRarity.Rare), UAZLItems.getHerbsItems(LootRarity.Rare),
-                    UAZLItems.getMedicalEquipmentItems(LootRarity.Rare),
-                    UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Rare),
-                    UAZLItems.getPharmaceuticalsItems(LootRarity.Rare))
+                items = mergeTables(
+                    UAZL_SWL.getAmbulanceDriverItems(LootRarity.Common)
+                )
             },
             -- Армейский Камуфляж Пустыня
             Outfit_ArmyCamoDesert = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Rare),
-                    UAZLItems.getHandguns308RifleM14Items(LootRarity.Rare),
-                    UAZLItems.getHandguns223RifleMSR700Items(LootRarity.Rare),
-                    UAZLItems.getHandguns308RifleMSR788Items(LootRarity.Rare),
-                    UAZLItems.getHandguns9mmPistolItems(LootRarity.Rare),
-                    UAZLItems.getHandguns556RifleM16Items(LootRarity.Uncommon))
+                items = mergeTables(
+                    UAZL_SWL.getArmyItems(LootRarity.Common)
+                )
             },
             -- Армейский Камуфляж Зеленый
             Outfit_ArmyCamoGreen = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Rare),
-                    UAZLItems.getHandguns308RifleM14Items(LootRarity.Rare),
-                    UAZLItems.getHandguns223RifleMSR700Items(LootRarity.Rare),
-                    UAZLItems.getHandguns308RifleMSR788Items(LootRarity.Rare),
-                    UAZLItems.getHandguns9mmPistolItems(LootRarity.Rare),
-                    UAZLItems.getHandguns556RifleM16Items(LootRarity.Uncommon))
+                items = mergeTables(
+                    UAZL_SWL.getArmyItems(LootRarity.Common)
+                )
             },
             -- Бандит
             Outfit_Bandit = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare),
-                    UAZLItems.getHandguns44MagnumPistolItems(LootRarity.Rare),
-                    UAZLItems.getHandguns44MagnumRevolverItems(LootRarity.Rare))
+                items = mergeTables(UAZL_SWL.getBanditItems(LootRarity.Common))
             },
             -- Байкер
             Outfit_Biker = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsLongBluntsItems(LootRarity.Rare),
-                    UAZLItems.getHandguns44MagnumPistolItems(LootRarity.Rare),
-                    UAZLItems.getHandguns44MagnumRevolverItems(LootRarity.Rare))
+                items = mergeTables(UAZL_SWL.getBikerItems(LootRarity.Common))
             },
             -- Кемпер
             Outfit_Camper = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Rare),
-                    UAZLItems.getCampingItems(LootRarity.Rare), UAZLItems.getCommunicationsBaseItems(LootRarity.Rare),
-                    UAZLItems.getTrappingSkillBooksItems(LootRarity.Uncommon))
+                items = mergeTables(UAZL_SWL.getCamperItems(LootRarity.Common))
             },
             -- Строитель
             Outfit_ConstructionWorker = {
-                items = mergeTables(UAZLItems.getConstructionWorkerItems(LootRarity.Common),
-                    UAZLItems.getCarpentrySkillBooksItems(LootRarity.Rare),
-                    UAZLItems.getCarpentrySkillBooksItems(LootRarity.Uncommon))
+                items = mergeTables(UAZL_SWL.getConstructionWorkerItems(LootRarity.Common))
             },
             -- Шеф повар общий
             Outfit_Cook_Generic = {
-                items = mergeTables(UAZLItems.getWaiterItems(LootRarity.Rare),
-                    UAZLItems.getCookingSkillBooksItems(LootRarity.Rare),
-                    UAZLItems.getWaiterPizzaWhirledItems(LootRarity.Uncommon))
+                items = mergeTables(UAZL_SWL.getCook_GenericItems(LootRarity.Common))
             },
             -- Шеф повар спиффо
             Outfit_Cook_Spiffos = {
-                items = mergeTables(UAZLItems.getWaiterItems(LootRarity.Rare),
-                    UAZLItems.getCookingSkillBooksItems(LootRarity.Rare),
-                    UAZLItems.getWaiterSpiffoItems(LootRarity.Rare),
-                    UAZLItems.getWaiterPizzaWhirledItems(LootRarity.Uncommon))
+                items = mergeTables(
+                    UAZL_SWL.getCook_GenericItems(LootRarity.Common),
+                    UAZL_SWL.getCook_SpiffosItems(LootRarity.Common)
+                )
             },
             -- Доктор
             Outfit_Doctor = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare),
-                    UAZLItems.getBandagesItems(LootRarity.Uncommon), UAZLItems.getDisinfectantsItems(LootRarity.Common),
-                    UAZLItems.getHerbsItems(LootRarity.ExtraRare),
-                    UAZLItems.getMedicalEquipmentItems(LootRarity.VeryRare),
-                    UAZLItems.getPharmaceuticalsItems(LootRarity.Rare))
+                items = mergeTables(
+                    UAZL_SWL.getDoctorItems(LootRarity.Common)
+                )
             },
             -- Фермер
             Outfit_Farmer = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare),
-                    UAZLItems.getFarmingSkillBooksItems(LootRarity.Uncommon))
+                items = mergeTables(
+                    UAZL_SWL.getFarmerItems(LootRarity.Common)
+                )
             },
             -- Пожарный Полный Костюм
             Outfit_FiremanFullSuit = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare),
-                    UAZLItems.getExtinguisherItems(LootRarity.Uncommon))
+                items = mergeTables(
+                    UAZL_SWL.getFiremanFullSuitItems(LootRarity.Common)
+                )
             },
             -- Пожарный Стриптизер
             Outfit_FiremanStripper = {
-                items = mergeTables(UAZLItems.getMoneyItems(LootRarity.Common))
+                items = mergeTables(
+                    UAZLItems.getMoneyItems(LootRarity.Common)
+                )
             },
             -- Рыбак
             Outfit_Fisherman = {
-                items = mergeTables(UAZLItems.getBookFishingSkillBooksItems(LootRarity.Common))
+                items = mergeTables(
+                    UAZL_SWL.getFishermanItems(LootRarity.Common)
+                )
             },
-            -- Мастер
+            -- Прораб
             Outfit_Foreman = {
-                items = mergeTables(UAZLItems.getCarpentrySkillBooksItems(LootRarity.Common))
+                items = mergeTables(
+                    UAZL_SWL.getConstructionWorkerItems(LootRarity.Common)
+                )
             },
             -- ХЗ что это
             Outfit_Fossoil = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare))
+                items = mergeTables(
+                    UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare)
+                )
             },
             -- Работник СТО
             Outfit_Gas2Go = {
-                items = mergeTables(UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare),
-                    UAZLItems.getMechanicItems(LootRarity.Rare))
+                items = mergeTables(
+                    UAZL_SWL.getMechanicItems(LootRarity.Uncommon)
+                )
             },
             -- Гилли
             Outfit_Ghillie = {
@@ -220,20 +208,21 @@ local function addSandboxLoot()
             },
             -- Механик
             Outfit_Mechanic = {
-                items = mergeTables(UAZLItems.getMechanicItems(LootRarity.Uncommon),
-                    UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare))
+                items = mergeTables(
+                    UAZL_SWL.getMechanicItems(LootRarity.Common)
+                )
             },
             -- Сваршик
             Outfit_Metalworker = {
-                items = mergeTables(UAZLItems.getMetalworkerItems(LootRarity.Uncommon),
-                    UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Rare))
+                items = mergeTables(
+                    UAZL_SWL.getMetalworkerItems(LootRarity.Common)
+                )
             },
             -- Медсестра
             Outfit_Nurse = {
-                items = mergeTables(UAZLItems.getBandagesItems(LootRarity.Rare),
-                    UAZLItems.getDisinfectantsItems(LootRarity.VeryRare), UAZLItems.getHerbsItems(LootRarity.VeryRare),
-                    UAZLItems.getMedicalEquipmentItems(LootRarity.VeryRare),
-                    UAZLItems.getMeleeWeaponsShortBladesItems(LootRarity.Uncommon))
+                items = mergeTables(
+                    UAZL_SWL.getNurseItems(LootRarity.Common)
+                )
             },
             -- Оффисный планктон
             Outfit_OfficeWorker = {

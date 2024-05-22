@@ -650,68 +650,6 @@ local function getPriestItems(rarity)
     return items
 end
 
--- Лут сваршика
-local function getMetalworkerItems(rarity)
-    rarity = rarity or 3;
-    local items = {
-        {"Base.Aluminum", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.NailsBox", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.ScrewsBox", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.Charcoal", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.SheetMetal", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.PropaneTank", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.SmallSheetMetal", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.WeldingRods", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.BlowTorch", tonumber(string.format("%.4f", rarity * 0.8))},
-        {"Base.Base.WeldingMask", tonumber(string.format("%.4f", rarity * 0.8))},
-        {"Base.ScrapMetal", tonumber(string.format("%.4f", rarity * 0.7))},
-        {"Base.ScrapMetal", tonumber(string.format("%.4f", rarity * 0.7))},
-        {"Base.ScrapMetal", tonumber(string.format("%.4f", rarity * 0.7))},
-    }
-    return items
-end
-
--- Лут механика
-local function getMechanicItems(rarity)
-    rarity = rarity or 3;
-    local items = {
-        {"Base.Scotchtape", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.DuctTape", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.DuctTape", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.EngineParts", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.PetrolBleachBottle", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.WhiskeyPetrol", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.PetrolPopBottle", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.WinePetrol", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.WaterBottlePetrol", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.ScrapMetal", tonumber(string.format("%.4f", rarity * 0.7))},
-        {"Base.ScrapMetal", tonumber(string.format("%.4f", rarity * 0.7))},
-        {"Base.ScrapMetal", tonumber(string.format("%.4f", rarity * 0.7))},
-    }
-    return items
-end
-
--- Лут строителя
-local function getConstructionWorkerItems(rarity)
-    rarity = rarity or 3;
-    local items = {
-        {"Base.Scotchtape", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.Tarp", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.DuctTape", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.DuctTape", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.UnusableWood", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.UnusableWood", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.UnusableWood", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.Dirtbag", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.PlasterPowder", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.ConcretePowder", tonumber(string.format("%.4f", rarity * 1))},
-        {"Base.Nails", tonumber(string.format("%.4f", rarity * 0.7))},
-        {"Base.Nails", tonumber(string.format("%.4f", rarity * 0.7))},
-        {"Base.NailsBox", tonumber(string.format("%.4f", rarity * 0.7))},
-    }
-    return items
-end
-
 -- Оружие - Ближнее
 local function getMeleeWeaponsAxesItems(rarity) --Топоры
     rarity = rarity or 3;
@@ -895,7 +833,7 @@ local function getHandguns45AutoPistolItems(rarity) --45 авто пистоле
         {"Base.Laser", tonumber(string.format("%.4f", rarity * 0.70))},
         {"Base.RedDot", tonumber(string.format("%.4f", rarity * 0.70))},
         {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * 0.50))},
-        {"Base.Bullets44Box", tonumber(string.format("%.4f", rarity * 0.20))}
+        {"Base.Bullets45Box", tonumber(string.format("%.4f", rarity * 0.20))}
     }
     return items
 end
@@ -1094,15 +1032,6 @@ return {
 
     -- Священник и его газеты
     getPriestItems = getPriestItems,
-
-    -- Лут сваршика
-    getMetalworkerItems = getMetalworkerItems,
-
-    -- Лут механика
-    getMechanicItems = getMechanicItems,
-
-    -- Лут строителя
-    getConstructionWorkerItems = getConstructionWorkerItems,
 
     -- Тестовые предметы
     getKeysItems = getKeysItems,
