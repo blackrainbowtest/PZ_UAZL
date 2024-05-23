@@ -26,8 +26,8 @@ end
 local function addSandboxLoot()
     -- Обект редкости лута
     LootRarity = {
-        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 8,
-        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 5,
+        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 5,
+        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 4,
         Rare = (SandboxVars.UAZL.Loot or defaultLoot) * 3,
         VeryRare = (SandboxVars.UAZL.Loot or defaultLoot) * 1,
         ExtraRare = (SandboxVars.UAZL.Loot or defaultLoot) * 0.5,
@@ -44,11 +44,11 @@ local function addSandboxLoot()
             },
             -- Инвентарь зомби женщины
             inventoryfemale = {
-                items = mergeTables(UAZLIC:getInventoryfemaleItems(LootRarity.Common))
+                items = mergeTables(UAZLIC:getInventoryfemaleItems(LootRarity.Uncommon))
             },
             -- Инвентарь зомби мужчины
             inventorymale = {
-                items = mergeTables(UAZLIC:getInventorymaleItems(LootRarity.Common))
+                items = mergeTables(UAZLIC:getInventorymaleItems(LootRarity.Uncommon))
             },
             -- =====================
             -- OUTFITS / НАРЯДЫ
