@@ -181,8 +181,7 @@ local function addSandboxLoot()
             },
             -- Коп
             Outfit_Police = {
-                items = mergeTables(UAZLItems.getPharmaceuticalsItems(LootRarity.Uncommon),
-                    UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Uncommon),
+                items = mergeTables(
                     UAZLItems.getHandguns44MagnumPistolItems(LootRarity.Uncommon),
                     UAZLItems.getHandguns44MagnumRevolverItems(LootRarity.Uncommon),
                     UAZLItems.getHandguns45AutoPistolItems(LootRarity.Uncommon),
@@ -194,8 +193,7 @@ local function addSandboxLoot()
             },
             -- Детектив
             Outfit_PoliceState = {
-                items = mergeTables(UAZLItems.getPharmaceuticalsItems(LootRarity.Uncommon),
-                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Uncommon),
+                items = mergeTables(
                 UAZLItems.getHandguns44MagnumPistolItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns44MagnumRevolverItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns45AutoPistolItems(LootRarity.Uncommon),
@@ -216,8 +214,7 @@ local function addSandboxLoot()
             },
             -- Частная полиция 
             Outfit_PrivateMilitia = {
-                items = mergeTables(UAZLItems.getPharmaceuticalsItems(LootRarity.Uncommon),
-                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Uncommon),
+                items = mergeTables(
                 UAZLItems.getHandguns44MagnumPistolItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns44MagnumRevolverItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns45AutoPistolItems(LootRarity.Uncommon),
@@ -233,8 +230,7 @@ local function addSandboxLoot()
             },
             -- Рейдер
             Outfit_Raider = {
-                items = mergeTables(UAZLItems.getPharmaceuticalsItems(LootRarity.Uncommon),
-                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Uncommon),
+                items = mergeTables(
                 UAZLItems.getHandguns44MagnumPistolItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns44MagnumRevolverItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns45AutoPistolItems(LootRarity.Uncommon),
@@ -246,8 +242,7 @@ local function addSandboxLoot()
             },
             -- Рейнджер
             Outfit_Ranger = {
-                items = mergeTables(UAZLItems.getPharmaceuticalsItems(LootRarity.Uncommon),
-                UAZLItems.getMeleeWeaponsShortBluntsItems(LootRarity.Uncommon),
+                items = mergeTables(
                 UAZLItems.getHandguns44MagnumRevolverItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns38SpecialRevolverItems(LootRarity.Uncommon),
                 UAZLItems.getHandguns45AutoRevolverItems(LootRarity.Uncommon),
@@ -263,22 +258,26 @@ local function addSandboxLoot()
             },
             -- стриптизерша
             Outfit_Stripper = {
-                items = mergeTables(UAZLItems.getMoneyItems(LootRarity.Uncommon),
+                items = mergeTables(
+                    UAZLItems.getMoneyItems(LootRarity.Uncommon),
                     UAZLItems.getMoneyItems(LootRarity.Uncommon))
             },
             -- черная стриптизерша
             Outfit_StripperBlack = {
-                items = mergeTables(UAZLItems.getMoneyItems(LootRarity.Uncommon),
+                items = mergeTables(
+                    UAZLItems.getMoneyItems(LootRarity.Uncommon),
                     UAZLItems.getMoneyItems(LootRarity.Uncommon))
             },
             -- гола стриптизерша
             Outfit_StripperNaked = {
-                items = mergeTables(UAZLItems.getMoneyItems(LootRarity.Uncommon),
+                items = mergeTables(
+                    UAZLItems.getMoneyItems(LootRarity.Uncommon),
                     UAZLItems.getMoneyItems(LootRarity.Uncommon))
             },
             -- розовая стриптизерша
             Outfit_StripperPink = {
-                items = mergeTables(UAZLItems.getMoneyItems(LootRarity.Uncommon),
+                items = mergeTables(
+                    UAZLItems.getMoneyItems(LootRarity.Uncommon),
                     UAZLItems.getMoneyItems(LootRarity.Uncommon))
             },
             -- студент
@@ -331,7 +330,8 @@ local function addSandboxLoot()
             },
             -- Студент универа
             Outfit_Varsity = {
-                items = mergeTables(UAZLItems.getCarpentrySkillBooksItems(LootRarity.VeryRare),
+                items = mergeTables(
+                    UAZLItems.getCarpentrySkillBooksItems(LootRarity.VeryRare),
                     UAZLItems.getCookingSkillBooksItems(LootRarity.VeryRare),
                     UAZLItems.getElectricianSkillBooksItems(LootRarity.VeryRare),
                     UAZLItems.getFarmingSkillBooksItems(LootRarity.VeryRare),
@@ -348,7 +348,8 @@ local function addSandboxLoot()
             },
             -- Официант Закусочная
             Outfit_Waiter_Diner = {
-                items = mergeTables(UAZLItems.getWaiterItems(LootRarity.Rare),
+                items = mergeTables(
+                    UAZLItems.getWaiterItems(LootRarity.Rare),
                     UAZLItems.getWaiterDinerItems(LootRarity.Rare))
             },
             -- Официант Маркет
@@ -361,7 +362,8 @@ local function addSandboxLoot()
             },
             -- Офицант пицерии
             Outfit_Waiter_PizzaWhirled = {
-                items = mergeTables(UAZLItems.getWaiterItems(LootRarity.Rare),
+                items = mergeTables(
+                    UAZLItems.getWaiterItems(LootRarity.Rare),
                     UAZLItems.getWaiterPizzaWhirledItems(LootRarity.Uncommon))
             },
             -- Офицант ресторана
@@ -375,7 +377,8 @@ local function addSandboxLoot()
             },
             -- Офицант тако бели
             Outfit_Waiter_TacoDelPancho = {
-                items = mergeTables(UAZLItems.getWaiterItems(LootRarity.Rare),
+                items = mergeTables(
+                    UAZLItems.getWaiterItems(LootRarity.Rare),
                     UAZLItems.getWaiterTacoDelPanchoItems(LootRarity.Uncommon))
             }
         },
