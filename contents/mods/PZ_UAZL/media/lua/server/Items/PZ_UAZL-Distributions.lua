@@ -4,6 +4,7 @@ require "Vehicles/VehicleDistributions"
 local UAZLItems = require "Items/PZ_UAZLItems"
 local UAZLIP = require "Items/PZ_UAZLItemsProfession"
 local UAZLIC = require "Items/PZ_UAZLItemsCommon"
+local UAZLIB = require "Items/PZ_UAZLItemsBags"
 
 -- Переобразует таблицы в одну большую
 function mergeTables(...)
@@ -497,11 +498,11 @@ local function addSandboxLoot()
         },
         -- Коробка для завтрака
         Lunchbox = {
-            items = {}
+            items = mergeTables(UAZLIB:getLunchboxItems(LootRarity.Rare))
         },
         -- Коробка для завтрака
         Lunchbox2 = {
-            items = {}
+            items = mergeTables(UAZLIB:getLunchboxItems(LootRarity.Rare))
         },
         -- Бумажный пакет
         Paperbag = {
