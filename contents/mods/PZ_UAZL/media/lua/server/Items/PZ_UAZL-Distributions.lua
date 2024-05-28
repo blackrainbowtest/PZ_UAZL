@@ -390,11 +390,12 @@ local function addSandboxLoot()
 
         -- Большой рюкзак
         Bag_ALICEpack = {
-            items = {}
+            items = mergeTables(UAZLIB:getALICEpackItems(LootRarity.Rare))
         },
         -- Армейский рюкзак
         Bag_ALICEpack_Army = {
-            items = {}
+            items = mergeTables(UAZLIB:getALICEpackItems(LootRarity.Rare),
+                UAZLIB:getALICEpack_ArmyItems(LootRarity.Uncommon))
         },
         -- большая походная сумка
         Bag_BigHikingBag = {
