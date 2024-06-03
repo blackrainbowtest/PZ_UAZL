@@ -10,6 +10,8 @@ local SR = {
     Legendary = 0.1
 }
 
+local isOn = SandboxVars.UAZL.BagLoot
+
 -- ============================================================
 -- Школьные рюкзаки / Ланчбоксы
 -- ============================================================
@@ -109,7 +111,7 @@ function UAZLIB:getLunchboxItems(rarity)
         {"Base.Yoghurt", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Разная еда
     } 
 
-    return items
+    return isOn and items or {}
 end
 
 -- ============================================================
@@ -185,7 +187,7 @@ function UAZLIB:getALICEpackItems(rarity)
         {"Base.SutureNeedle", tonumber(string.format("%.4f", rarity * SR.Legendary))}, -- Медецина
     } 
 
-    return items
+    return isOn and items or {}
 end
 
 -- ============================================================
@@ -251,7 +253,140 @@ function UAZLIB:getALICEpack_ArmyItems(rarity)
         {"Base.Notebook", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Документация
     } 
 
-    return items
+    return isOn and items or {}
+end
+
+-- ============================================================
+-- Большая походная сумка
+-- ============================================================
+function UAZLIB:getBigHikingBagItems(rarity)
+    rarity = rarity or 3;
+
+    local items = { 
+        {"Base.WaterBottleFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.BeerBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WhiskeyWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.MayonnaiseWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WaterPopBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.JuiceBox", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.Pop", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop2", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop3", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.PopBottle", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Вода
+        {"Base.Crackers", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Еда
+        {"Base.GrahamCrackers", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Еда
+        {"Base.Pretzel", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Еда
+        {"Base.GummyBears", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Еда
+        {"Base.GummyWorms", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Еда
+        {"Base.RockCandy", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Еда
+        {"Base.Crisps", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Еда
+        {"Base.Crisps2", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Еда
+        {"Base.Crisps3", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Еда
+        {"Base.Crisps4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Еда
+        {"Base.RemouladeFull", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Еда
+        {"Base.PeanutButter", tonumber(string.format("%.4f", rarity * SR.ExtraRare))}, -- Еда
+        {"Base.Waffles", tonumber(string.format("%.4f", rarity * SR.Elite))}, -- Еда
+        {"Base.TinnedBeans", tonumber(string.format("%.4f", rarity * SR.Elite))}, -- Еда
+        {"Base.BandageDirty", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Медецина
+        {"Base.DenimStripsDirty", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Медецина
+        {"Base.LeatherStripsDirty", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Медецина
+        {"Base.RippedSheetsDirty", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Медецина
+        {"Base.DenimStrips", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Медецина
+        {"Base.LeatherStrips", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Медецина
+        {"Base.RippedSheets", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Медецина
+        {"Base.Bandaid", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Медецина
+        {"Base.AlcoholRippedSheets", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Медецина
+        {"Base.Bandage", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Медецина
+        {"Base.AlcoholWipes", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Медецина
+    } 
+
+    return isOn and items or {}
+end
+
+-- ============================================================
+-- Сумка для боулинга
+-- ============================================================
+function UAZLIB:getBowlingBallBagItems(rarity)
+    rarity = rarity or 3;
+
+    local items = { 
+        {"Base.WaterBottleFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.BeerBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WhiskeyWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.MayonnaiseWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WaterPopBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.JuiceBox", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.Pop", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop2", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop3", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.PopBottle", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Вода
+    } 
+
+    return isOn and items or {}
+end
+
+-- ============================================================
+-- Докторский саквояж
+-- ============================================================
+function UAZLIB:getDoctorBagItems(rarity)
+    rarity = rarity or 3;
+
+    local items = { 
+        {"Base.WaterBottleFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.BeerBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WhiskeyWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.MayonnaiseWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WaterPopBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.JuiceBox", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.Pop", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop2", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop3", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.PopBottle", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Вода
+    } 
+
+    return isOn and items or {}
+end
+
+-- ============================================================
+-- Спортивная сумка
+-- ============================================================
+function UAZLIB:getDuffelBagItems(rarity)
+    rarity = rarity or 3;
+
+    local items = { 
+        {"Base.WaterBottleFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.BeerBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WhiskeyWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.MayonnaiseWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WaterPopBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.JuiceBox", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.Pop", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop2", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.Pop3", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Вода
+        {"Base.PopBottle", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Вода
+        {"Base.Hat_HockeyMask", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Одежда
+        {"Base.Machete", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Режущее
+        {"Base.BaseballBat", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Дробящее
+    } 
+
+    return isOn and items or {}
+end
+
+-- ============================================================
+-- Сумка для гольфа
+-- ============================================================
+function UAZLIB:getGolfBagItems(rarity)
+    rarity = rarity or 3;
+
+    local items = { 
+        {"Base.WaterBottleFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.BeerBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WhiskeyWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.MayonnaiseWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WaterPopBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+    } 
+
+    return isOn and items or {}
 end
 
 

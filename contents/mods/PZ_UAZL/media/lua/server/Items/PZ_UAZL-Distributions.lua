@@ -397,29 +397,29 @@ local function addSandboxLoot()
             items = mergeTables(UAZLIB:getALICEpackItems(LootRarity.Rare),
                 UAZLIB:getALICEpack_ArmyItems(LootRarity.Uncommon))
         },
-        -- большая походная сумка
+        -- Большая походная сумка
         Bag_BigHikingBag = {
-            items = {}
+            items = mergeTables(UAZLIB:getBigHikingBagItems(LootRarity.Rare))
         },
         -- Сумка для боулинга
         Bag_BowlingBallBag = {
-            items = {}
+            items = mergeTables(UAZLIB:getBowlingBallBagItems(LootRarity.Rare))
         },
         -- Докторский саквояж
         Bag_DoctorBag = {
-            items = {}
+            items = mergeTables(UAZLIB:getDoctorBagItems(LootRarity.Rare))
         },
         -- Спортивная сумка
         Bag_DuffelBag = {
-            items = {}
+            items = mergeTables(UAZLIB:getDuffelBagItems(LootRarity.Uncommon))
         },
         -- Спортивная сумка 2
         Bag_DuffelBagTINT = {
-            items = {}
+            items = mergeTables(UAZLIB:getDuffelBagItems(LootRarity.Uncommon))
         },
         -- Сумка для гольфа
         Bag_GolfBag = {
-            items = {}
+            items = mergeTables(UAZLIB:getGolfBagItems(LootRarity.Uncommon))
         },
         -- Спортивная сумка 3 сумка заключенного
         Bag_InmateEscapedBag = {
@@ -439,7 +439,7 @@ local function addSandboxLoot()
         },
         -- обычная походная сумка
         Bag_NormalHikingBag = {
-            items = {}
+            items = mergeTables(UAZLIB:getBigHikingBagItems(LootRarity.Rare))
         },
         -- Школьный рюкзак
         Bag_Schoolbag = {
