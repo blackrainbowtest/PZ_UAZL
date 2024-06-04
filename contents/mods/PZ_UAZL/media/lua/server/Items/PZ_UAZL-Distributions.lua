@@ -445,7 +445,7 @@ local function addSandboxLoot()
         },
         -- Школьный рюкзак
         Bag_Schoolbag = {
-            items = mergeTables(UAZLIB:getSchoolbagItems(LootRarity.Rare))
+            items = mergeTables(UAZLIB:getSchoolbagItems(LootRarity.VeryRare))
         },
         -- Туристический рюкзак
         Bag_SurvivorBag = {
