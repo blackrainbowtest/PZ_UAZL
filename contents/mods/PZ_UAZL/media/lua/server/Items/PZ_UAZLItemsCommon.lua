@@ -62,15 +62,15 @@ function UAZLIC:getInventoryfemaleItems(rarity)
         {"Base.Twigs", tonumber(string.format("%.4f", rarity * SR.Elite))},
         {"Base.Sheet", tonumber(string.format("%.4f", rarity * SR.Legendary))},
         -- -- Оружие
-        {"Base.ChairLeg", tonumber(string.format("%.4f", rarity * SR.Common))},
-        {"Base.TableLeg", tonumber(string.format("%.4f", rarity * SR.Common))},
         {"Base.BreadKnife", tonumber(string.format("%.4f", rarity * SR.Common))},
+        {"Base.Spoon", tonumber(string.format("%.4f", rarity * SR.Common))},
+        {"Base.ButterKnife", tonumber(string.format("%.4f", rarity * SR.Common))},
+        {"Base.Fork", tonumber(string.format("%.4f", rarity * SR.Common))},
         {"Base.SmashedBottle", tonumber(string.format("%.4f", rarity * SR.Common))},
-        {"Base.ButterKnife", tonumber(string.format("%.4f", rarity * SR.Uncommon))},
-        {"Base.Fork", tonumber(string.format("%.4f", rarity * SR.Uncommon))},
-        {"Base.KitchenKnife", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
-        {"Base.Sledgehammer", tonumber(string.format("%.4f", rarity * SR.Legendary))},
-        {"Base.PickAxeHandle", tonumber(string.format("%.4f", rarity * SR.Legendary))},
+        {"Base.KitchenKnife", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.IcePick", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.MeatCleaver", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.IceHockeyStick", tonumber(string.format("%.4f", rarity * SR.Rare))},
         -- -- литература
         --     --
         -- -- Журналы
@@ -80,10 +80,11 @@ function UAZLIC:getInventoryfemaleItems(rarity)
         {"Base.MagazineWordsearch3", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
         {"Base.Newspaper", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
         -- -- Прочее
-        {"Base.ToiletPaper", tonumber(string.format("%.4f", rarity * SR.Rare))},
-        {"Base.Perfume", tonumber(string.format("%.4f", rarity * SR.Rare))},
-        {"Base.Toothbrush", tonumber(string.format("%.4f", rarity * SR.Rare))},
-        {"Base.Toothpaste", tonumber(string.format("%.4f", rarity * SR.Common))},
+        {"Base.Maggots", tonumber(string.format("%.4f", rarity * SR.Common))},
+        {"Base.ToiletPaper", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Perfume", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Toothbrush", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Toothpaste", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
     }
     return items
 end
@@ -139,15 +140,18 @@ function UAZLIC:getInventorymaleItems(rarity)
         {"Base.Twigs", tonumber(string.format("%.4f", rarity * SR.Elite))},
         {"Base.Sheet", tonumber(string.format("%.4f", rarity * SR.Legendary))},
         -- Оружие
-        {"Base.ChairLeg", tonumber(string.format("%.4f", rarity * SR.Common))},
-        {"Base.TableLeg", tonumber(string.format("%.4f", rarity * SR.Common))},
-        {"Base.BreadKnife", tonumber(string.format("%.4f", rarity * SR.Common))},
-        {"Base.SmashedBottle", tonumber(string.format("%.4f", rarity * SR.Common))},
-        {"Base.ButterKnife", tonumber(string.format("%.4f", rarity * SR.Uncommon))},
-        {"Base.Fork", tonumber(string.format("%.4f", rarity * SR.Uncommon))},
-        {"Base.KitchenKnife", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.KitchenKnife", tonumber(string.format("%.4f", rarity * SR.Uncommon))},
+        {"Base.BreadKnife", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.Spoon", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.ButterKnife", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.Fork", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.SmashedBottle", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.Screwdriver", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.IcePick", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.MeatCleaver", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.BaseballBat", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.BaseballBatNails", tonumber(string.format("%.4f", rarity * SR.Rare))},
         {"Base.Sledgehammer", tonumber(string.format("%.4f", rarity * SR.Legendary))},
-        {"Base.PickAxeHandle", tonumber(string.format("%.4f", rarity * SR.Legendary))},
         -- литература
             --
         -- Журналы
@@ -157,11 +161,39 @@ function UAZLIC:getInventorymaleItems(rarity)
         {"Base.MagazineWordsearch3", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
         {"Base.Newspaper", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
         -- Прочее
-        {"Base.ToiletPaper", tonumber(string.format("%.4f", rarity * SR.Rare))},
-        {"Base.Razor", tonumber(string.format("%.4f", rarity * SR.Rare))},
-        {"Base.Cologne", tonumber(string.format("%.4f", rarity * SR.Common))},
+        {"Base.Maggots", tonumber(string.format("%.4f", rarity * SR.Common))},
+        {"Base.ToiletPaper", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Razor", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Cologne", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
     }
     return items
 end
+-- ============================================================
+-- ОРУЖИЯ ДАЛЬНЕГО БОЯ
+-- ============================================================
+function UAZLIC:getCommonGunsItems(rarity)
+    rarity = rarity or 3;
+
+    local items = {
+        -- Огнестрел
+        {"Base.Pistol3", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.Pistol2", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.Revolver_Short", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Revolver", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Pistol", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        {"Base.Revolver_Long", tonumber(string.format("%.4f", rarity * SR.VeryRare))},
+        -- Боеприпасы
+        {"Base.Bullets44", tonumber(string.format("%.4f", rarity * SR.Uncommon))},
+        {"Base.Bullets45", tonumber(string.format("%.4f", rarity * SR.Uncommon))},
+        {"Base.Bullets38", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.Bullets9mm", tonumber(string.format("%.4f", rarity * SR.Rare))},
+        {"Base.Bullets44Box", tonumber(string.format("%.4f", rarity * SR.ExtraRare))},
+        {"Base.Bullets45Box", tonumber(string.format("%.4f", rarity * SR.ExtraRare))},
+        {"Base.Bullets38Box", tonumber(string.format("%.4f", rarity * SR.ExtraRare))},
+        {"Base.Bullets9mmBox", tonumber(string.format("%.4f", rarity * SR.ExtraRare))},
+    }
+    return items
+end
+
 
 return UAZLIC

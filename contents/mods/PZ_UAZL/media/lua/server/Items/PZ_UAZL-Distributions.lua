@@ -45,11 +45,13 @@ local function addSandboxLoot()
             },
             -- Инвентарь зомби женщины
             inventoryfemale = {
-                items = mergeTables(UAZLIC:getInventoryfemaleItems(LootRarity.Uncommon))
+                items = mergeTables(UAZLIC:getInventoryfemaleItems(LootRarity.Rare),
+                UAZLIC:getCommonGunsItems(LootRarity.ExtraRare))
             },
             -- Инвентарь зомби мужчины
             inventorymale = {
-                items = mergeTables(UAZLIC:getInventorymaleItems(LootRarity.Uncommon))
+                items = mergeTables(UAZLIC:getInventorymaleItems(LootRarity.Rare),
+                UAZLIC:getCommonGunsItems(LootRarity.ExtraRare))
             },
             -- =====================
             -- OUTFITS / НАРЯДЫ
@@ -443,7 +445,7 @@ local function addSandboxLoot()
         },
         -- Школьный рюкзак
         Bag_Schoolbag = {
-            items = {}
+            items = mergeTables(UAZLIB:getSchoolbagItems(LootRarity.Rare))
         },
         -- Туристический рюкзак
         Bag_SurvivorBag = {

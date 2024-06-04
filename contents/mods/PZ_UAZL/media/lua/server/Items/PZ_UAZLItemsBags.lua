@@ -389,5 +389,80 @@ function UAZLIB:getGolfBagItems(rarity)
     return isOn and items or {}
 end
 
+-- ============================================================
+-- Школьная сумка
+-- ============================================================
+function UAZLIB:getSchoolbagItems(rarity)
+    rarity = rarity or 3;
+
+    local items = { 
+        {"Base.WaterBottleFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.BeerBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WhiskeyWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.MayonnaiseWaterFull", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.WaterPopBottle", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Вода
+        {"Base.BookCarpentry1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookCarpentry2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookCarpentry3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookCarpentry4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookCarpentry5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookCooking1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookCooking2", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookCooking3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookCooking4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookCooking5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookElectrician1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookElectrician2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookElectrician3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookElectrician4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookElectrician5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookFarming1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookFarming2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookFarming3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookFarming4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookFarming5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookFirstAid1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookFirstAid2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookFirstAid3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookFirstAid4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookFirstAid5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookFishing1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookFishing2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookFishing3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookFishing4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookFishing5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookForaging1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookForaging2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookForaging3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookForaging4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookForaging5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookMechanic1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookMechanic2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookMechanic3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookMechanic4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookMechanic5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookMetalWelding1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookMetalWelding2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookMetalWelding3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookMetalWelding4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookMetalWelding5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookTailoring1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookTailoring2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookTailoring3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookTailoring4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookTailoring5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.BookTrapping1", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookTrapping2", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.BookTrapping3", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Литература
+        {"Base.BookTrapping4", tonumber(string.format("%.4f", rarity * SR.Rare))}, -- Литература
+        {"Base.BookTrapping5", tonumber(string.format("%.4f", rarity * SR.VeryRare))}, -- Литература
+        {"Base.Book", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.Book", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.Book", tonumber(string.format("%.4f", rarity * SR.Common))}, -- Литература
+        {"Base.Cockroach", tonumber(string.format("%.4f", rarity * SR.Uncommon))}, -- Насекомое
+    }
+
+    return isOn and items or {}
+end
 
 return UAZLIB
