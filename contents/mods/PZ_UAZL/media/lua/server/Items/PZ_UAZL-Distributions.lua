@@ -25,16 +25,17 @@ function mergeTables(...)
 end
 
 local function addSandboxLoot()
+    local defaultLoot = 3;
+    
     -- Обект редкости лута
     LootRarity = {
-        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 5,
-        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 4,
-        Rare = (SandboxVars.UAZL.Loot or defaultLoot) * 3,
+        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 4,
+        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 3,
+        Rare = (SandboxVars.UAZL.Loot or defaultLoot) * 2,
         VeryRare = (SandboxVars.UAZL.Loot or defaultLoot) * 1,
         ExtraRare = (SandboxVars.UAZL.Loot or defaultLoot) * 0.5,
         Elite = (SandboxVars.UAZL.Loot or defaultLoot) * 0.01,
     }
-    local defaultLoot = 3;
 
     local suburbsDistribution = {
         -- Общее
