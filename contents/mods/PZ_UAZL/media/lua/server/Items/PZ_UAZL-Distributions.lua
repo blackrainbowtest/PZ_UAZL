@@ -29,11 +29,11 @@ local function addSandboxLoot()
     
     -- Обект редкости лута
     LootRarity = {
-        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 4,
-        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 3,
-        Rare = (SandboxVars.UAZL.Loot or defaultLoot) * 2,
-        VeryRare = (SandboxVars.UAZL.Loot or defaultLoot) * 1,
-        ExtraRare = (SandboxVars.UAZL.Loot or defaultLoot) * 0.5,
+        Common = (SandboxVars.UAZL.Loot or defaultLoot) * 1.3,
+        Uncommon = (SandboxVars.UAZL.Loot or defaultLoot) * 1.1,
+        Rare = (SandboxVars.UAZL.Loot or defaultLoot) * 1,
+        VeryRare = (SandboxVars.UAZL.Loot or defaultLoot) * 0.6,
+        ExtraRare = (SandboxVars.UAZL.Loot or defaultLoot) * 0.2,
         Elite = (SandboxVars.UAZL.Loot or defaultLoot) * 0.01,
     }
 
